@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { StudentModule } from './student/student.module';
-import { CourseModule } from './course/course.module';
-import { DepartmentModule } from './department/department.module';
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-@Module({
-  imports: [StudentModule, CourseModule, DepartmentModule],
-})
-export class AppModule {}
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000); 
+  console.log(`Application is running on port 3000 as localhost:3000`);
+}
+bootstrap();

@@ -4,7 +4,7 @@ import { DepartmentController } from './department.controller';
 import { StudentModule } from '../student/student.module';
 
 @Module({
-  imports: [forwardRef(() => StudentModule)], // Circular with Student
+  imports: [forwardRef(() => StudentModule)], 
   controllers: [DepartmentController],
   providers: [DepartmentService],
   exports: [DepartmentService],
